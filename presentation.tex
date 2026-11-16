@@ -1,0 +1,224 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\definecolor{space}{HTML}{07111F}
+\definecolor{panel}{HTML}{101F33}
+\definecolor{cyan}{HTML}{57D8E8}
+\definecolor{muted}{HTML}{A9B8CC}
+\definecolor{warm}{HTML}{FFB86B}
+
+\usetheme{default}
+\setbeamercolor{normal text}{fg=white,bg=space}
+\setbeamercolor{structure}{fg=cyan}
+\setbeamercolor{frametitle}{fg=white,bg=space}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{itemize item}{fg=cyan}
+\setbeamercolor{itemize subitem}{fg=warm}
+\setbeamercolor{block title}{fg=cyan,bg=panel}
+\setbeamercolor{block body}{fg=white,bg=panel}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{
+  \hfill\color{muted}\insertframenumber\,/\,\inserttotalframenumber
+  \hspace{0.6cm}\vspace{0.25cm}
+}
+\setbeamersize{text margin left=0.8cm,text margin right=0.8cm}
+\hypersetup{colorlinks=true,urlcolor=cyan}
+
+\newcommand{\tagline}[1]{{\small\color{muted}#1}}
+\newcommand{\keyterm}[1]{{\color{cyan}\textbf{#1}}}
+\newcommand{\planet}[3]{%
+  \fill[#1] (#2,#3) circle (0.12);
+}
+
+\title{The Lost Explorer}
+\subtitle{Las misiones terminaron. Sus historias siguen vivas.}
+\author{}
+\date{}
+
+\begin{document}
+
+% 1 — Portada
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[space] (current page.south west) rectangle (current page.north east);
+    \draw[cyan!45, line width=0.6pt] (8.5,4.2) ellipse (3.4 and 1.15);
+    \draw[cyan!22, line width=0.6pt] (8.5,4.2) ellipse (2.55 and 0.88);
+    \fill[warm] (8.5,4.2) circle (0.36);
+    \planet{cyan}{11.1}{4.2}
+    \planet{white}{6.05}{4.2}
+    \fill[warm!90] (7.2,3.8) circle (0.055);
+    \fill[white!80] (10.4,4.65) circle (0.045);
+    \fill[white!70] (9.5,3.3) circle (0.035);
+  \end{tikzpicture}
+  \vspace{0.8cm}
+  {\color{cyan}\small NASA SPACE APPS CHALLENGE}\\[0.35cm]
+  {\usebeamerfont{title}\Huge\bfseries THE LOST\\EXPLORER}\\[0.35cm]
+  {\Large\color{muted}Las misiones terminaron.\\Sus historias siguen vivas.}\\[0.75cm]
+  \tagline{Una experiencia web interactiva para explorar mundos y misiones espaciales.}
+\end{frame}
+
+% 2 — Idea
+\begin{frame}{La idea: convertir datos espaciales en exploración}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.53\textwidth}
+      \begin{block}{El punto de partida}
+        Muchas misiones ya concluyeron, pero sus descubrimientos y aventuras
+        siguen siendo una forma poderosa de aprender sobre otros mundos.
+      \end{block}
+      \vspace{0.25cm}
+      \begin{block}{La propuesta}
+        Un recorrido guiado por el Sistema Solar que combina escenas 3D,
+        relatos de misiones y una guía virtual llamada NOVA.
+      \end{block}
+    \column{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.8]
+        \fill[warm] (0,0) circle (0.36) node[below=0.48cm,text=white] {\small Sol};
+        \draw[muted!55] (0,0) circle (1.1);
+        \draw[muted!55] (0,0) circle (1.85);
+        \draw[muted!55] (0,0) circle (2.6);
+        \fill[cyan] (1.1,0) circle (0.12) node[right=0.12cm,text=white] {\small Tierra};
+        \fill[orange!90] (-1.85,0) circle (0.12) node[left=0.12cm,text=white] {\small Marte};
+        \fill[white] (0,2.6) circle (0.10);
+      \end{tikzpicture}
+      \vspace{0.1cm}
+
+      \tagline{Explorar \(\rightarrow\) descubrir \(\rightarrow\) aprender}
+  \end{columns}
+\end{frame}
+
+% 3 — Experiencia
+\begin{frame}{Un recorrido interactivo, de la órbita a la superficie}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.32\textwidth}
+      \begin{block}{01 \quad Explorar}
+        Navega una representación 3D del Sistema Solar y elige un destino.
+      \end{block}
+    \column{0.32\textwidth}
+      \begin{block}{02 \quad Descubrir}
+        Visita sitios lunares Apollo o conoce nueve misiones que llegaron a Marte.
+      \end{block}
+    \column{0.32\textwidth}
+      \begin{block}{03 \quad Interactuar}
+        Examina escenas de superficie y modelos seleccionados de rovers.
+      \end{block}
+  \end{columns}
+  \vspace{0.3cm}
+  \begin{alertblock}{Acompañamiento}
+    NOVA aporta mensajes contextuales y animaciones durante la experiencia;
+    los controles admiten mouse, pantalla táctil y controles en pantalla.
+  \end{alertblock}
+\end{frame}
+
+% 4 — Historias
+\begin{frame}{Las misiones: ciencia contada a través de sus hitos}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.53\textwidth}
+      \begin{itemize}
+        \item \keyterm{Sojourner (1997):} primera demostración de un rover en Marte; funcionó 83 días.
+        \item \keyterm{Spirit (2004):} una rueda expuso suelo rico en sílice en el cráter Gusev.
+        \item \keyterm{Opportunity (2004):} recorrió 45,16 km y halló indicios de agua pasada.
+        \item \keyterm{Curiosity (2012) y Perseverance (2021):} estudian ambientes y muestras en Gale y Jezero.
+      \end{itemize}
+    \column{0.42\textwidth}
+      \begin{block}{Más que una cronología}
+        Cada misión se presenta mediante su lugar de exploración, su objetivo,
+        los instrumentos o hallazgos destacados y, cuando está disponible,
+        un modelo 3D.
+      \end{block}
+      \vspace{0.2cm}
+      \tagline{También incluye Viking 1 y 2, Phoenix e InSight.}
+  \end{columns}
+\end{frame}
+
+% 5 — Tecnología
+\begin{frame}{Cómo está construida la experiencia}
+  \centering
+  \begin{tikzpicture}[
+    node distance=0.55cm,
+    box/.style={draw=cyan!70,rounded corners=3pt,fill=panel,
+                minimum width=3.25cm,minimum height=1.05cm,
+                align=center,text=white},
+    link/.style={-{Stealth[length=2mm]},draw=cyan!80,line width=0.8pt}
+  ]
+    \node[box] (ui) {\textbf{Interfaz web}\\HTML5 + CSS3};
+    \node[box,right=of ui] (app) {\textbf{Navegación y lógica}\\JavaScript ES modules};
+    \node[box,right=of app] (scene) {\textbf{Escenas y modelos 3D}\\Three.js + WebGL};
+    \node[box,below=0.85cm of app] (assets) {\textbf{Contenido local}\\misiones, texturas, audio y modelos};
+    \draw[link] (ui) -- (app);
+    \draw[link] (app) -- (scene);
+    \draw[link] (assets) -- (app);
+    \draw[link] (assets) -- (scene);
+  \end{tikzpicture}
+  \vspace{0.45cm}
+  \begin{block}{Desarrollo}
+    Vite sirve la aplicación durante el desarrollo y genera la compilación
+    de producción. La experiencia se ejecuta en el navegador y requiere
+    soporte WebGL para las escenas 3D.
+  \end{block}
+\end{frame}
+
+% 6 — Diseño
+\begin{frame}{Diseñada para descubrir a tu propio ritmo}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+      \begin{block}{Interacción}
+        \begin{itemize}
+          \item Rotar escenas con arrastre; acercar o alejar con zoom.
+          \item Usar gestos táctiles en dispositivos compatibles.
+          \item Seguir enlaces a páginas de misiones de NASA.
+        \end{itemize}
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{Criterios de experiencia}
+        \begin{itemize}
+          \item NOVA acompaña sin reemplazar la exploración.
+          \item Las historias conectan lugares, artefactos y hallazgos.
+          \item Se respetan preferencias de movimiento reducido en transiciones compatibles.
+        \end{itemize}
+      \end{block}
+  \end{columns}
+  \vspace{0.25cm}
+  \centering
+  {\large\color{cyan}\textbf{Una invitación a explorar la ciencia detrás de cada misión.}}
+\end{frame}
+
+% 7 — Fuentes y cierre
+\begin{frame}{Fuentes y cierre}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.56\textwidth}
+      \textbf{\color{cyan}Fuentes de contenido}
+      \begin{itemize}
+        \item Proyecto: README y datos de misiones de The Lost Explorer.
+        \item NASA Science: \href{https://science.nasa.gov/mission/mars-pathfinder/}{Mars Pathfinder},
+          \href{https://science.nasa.gov/mission/mer-spirit/}{Spirit},
+          \href{https://science.nasa.gov/mission/mer-opportunity/}{Opportunity}.
+        \item NASA Science: \href{https://science.nasa.gov/mission/mars-2020-perseverance/}{Perseverance},
+          \href{https://science.nasa.gov/mission/msl-curiosity/}{Curiosity}.
+      \end{itemize}
+      \vspace{0.15cm}
+      \tagline{Más referencias de misiones: NASA Science.}
+    \column{0.39\textwidth}
+      \begin{tikzpicture}
+        \fill[warm] (0,0) circle (0.25);
+        \draw[cyan!65] (0,0) ellipse (1.25 and 0.48);
+        \fill[cyan] (1.12,0) circle (0.10);
+        \draw[white!35] (0,0) ellipse (1.75 and 0.72);
+        \fill[white] (-1.68,0.12) circle (0.08);
+      \end{tikzpicture}
+      \vspace{0.35cm}
+
+      {\Large\bfseries ¡Comienza la exploración!}\\[0.15cm]
+      \tagline{The Lost Explorer}
+  \end{columns}
+\end{frame}
+
+\end{document}
