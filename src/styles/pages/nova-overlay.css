@@ -1,0 +1,86 @@
+
+/* NOVA permanece fuera de las páginas */
+
+#nova-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+}
+
+#nova-overlay[hidden] {
+  display: none !important;
+}
+
+#nova-overlay .nova-guide {
+  position: absolute;
+  left: auto;
+  right: 28px;
+  bottom: 22px;
+  pointer-events: none;
+}
+
+#nova-overlay .nova-dialogue {
+  pointer-events: auto;
+}
+
+#nova-overlay .nova-show {
+  position: absolute;
+  left: auto;
+  right: 28px;
+  bottom: 24px;
+  pointer-events: auto;
+}
+
+#nova-overlay .nova-show[hidden],
+#nova-overlay .nova-guide[hidden] {
+  display: none !important;
+}
+
+/* Los botones de navegación del Sistema Solar
+   no se muestran durante la exploración lunar. */
+
+#nova-overlay[data-page="moon"] .nova-actions {
+  display: none;
+}
+
+/* Capa de transición cinematográfica */
+
+#scene-fade {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+
+  background: #02050e;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 650ms ease-in-out,
+    visibility 650ms ease-in-out;
+}
+
+#scene-fade.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  #nova-overlay .nova-guide {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  #nova-overlay .nova-show {
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #scene-fade {
+    transition: none;
+  }
+}

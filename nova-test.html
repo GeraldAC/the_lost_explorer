@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>NOVA - Prueba 3D</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #050b19;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    #nova-viewer {
+      position: fixed;
+      inset: 0;
+    }
+
+    .panel {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      right: 20px;
+      max-width: 580px;
+      padding: 20px;
+      background: rgba(10, 20, 40, 0.88);
+      border: 1px solid #31547d;
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+    }
+
+    h2 {
+      margin: 0 0 8px;
+    }
+
+    p {
+      color: #aabbd2;
+      font-size: 14px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    button {
+      padding: 10px 14px;
+      border: 1px solid #39749b;
+      border-radius: 8px;
+      background: #102b48;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #17608d;
+    }
+
+    button.active {
+      background: #0284c7;
+      border-color: #38bdf8;
+    }
+
+    #status {
+      color: #67e8f9;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="nova-viewer"></div>
+
+  <section class="panel">
+    <h2>NOVA — Laboratorio de animaciones</h2>
+    <p id="status">Cargando modelo 3D...</p>
+    <div class="buttons" id="animation-buttons"></div>
+  </section>
+
+  <script type="module" src="/src/nova-test.js"></script>
+</body>
+</html>
