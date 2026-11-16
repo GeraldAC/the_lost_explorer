@@ -8,6 +8,8 @@
 
 The Lost Explorer is an interactive educational web experience for exploring the Solar System and learning about human and robotic space exploration. It combines browser-based 3D scenes with mission stories and NOVA, a virtual guide.
 
+https://github.com/user-attachments/assets/1afac0c6-1569-4ea7-be76-148ade8df1f4
+
 ## Features
 
 - Explore an interactive, textured 3D representation of the Solar System.
